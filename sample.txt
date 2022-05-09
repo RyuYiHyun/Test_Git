@@ -1,2 +1,9 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 업데이트1
 업데이트2
+=======
+>>>>>>> parent of 09b073d (2 commit)
+=======
+업데이트1
+>>>>>>> parent of ae07dd3 (3 commit)

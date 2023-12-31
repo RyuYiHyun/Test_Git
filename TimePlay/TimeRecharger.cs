@@ -18,10 +18,10 @@ namespace TimePlay
             //new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             var datetime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             var dateWithOffset = new DateTimeOffset(datetime).ToUniversalTime();
-            _timestamp = dateWithOffset.ToUnixTimeMilliseconds();
+            _timestamp = dateWithOffset.ToUnixTimeSeconds();//ToUnixTimeMilliseconds();
         }
         const double MAX_ENERGY = 100;
-        const long RECHARGE_CYCLE = 60000;//1000 = 1초
+        const long RECHARGE_CYCLE = 1;
 
         public int remain_energy = 0;
         public long remaining_time_to_full = 0;
@@ -30,12 +30,12 @@ namespace TimePlay
         public long GetEpoch(DateTimeOffset date)
         {
             var dateWithOffset = date.ToUniversalTime();
-            return dateWithOffset.ToUnixTimeMilliseconds();
+            return dateWithOffset.ToUnixTimeSeconds(); ;
         }
         public long GetEpoch(DateTime date)
         {
             var dateWithOffset = new DateTimeOffset(date).ToUniversalTime();
-            return dateWithOffset.ToUnixTimeMilliseconds();
+            return dateWithOffset.ToUnixTimeSeconds();
         }
         public int GetEnergy()
         {
